@@ -11,7 +11,7 @@ class Promise : public RefCounted {
     GDCLASS(Promise, RefCounted);
 
 private:
-    Future m_future;
+    Ref<Future> m_future;
 
 protected:
     static void _bind_methods();
@@ -20,7 +20,7 @@ public:
     Promise();
     ~Promise();
 
-    Future future() const;
+    Ref<Future> future() const;
 
     void fulfill(Variant p_value);
 };
