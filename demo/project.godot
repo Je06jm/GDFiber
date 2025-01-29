@@ -14,6 +14,11 @@ config/name="demo"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[gdfiber]
+
+enable=false
+threads=-1
+
 [rendering]
 
 renderer/rendering_method="mobile"
