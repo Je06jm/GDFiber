@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/demo/bin/env python
 import os
 import sys
 
@@ -18,7 +18,7 @@ sources = Glob("src/*.cpp")
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
-        "bin/libgdfiber.{}.{}.framework/libgdfiber.{}.{}".format(
+        "demo/bin/libgdfiber.{}.{}.framework/libgdfiber.{}.{}".format(
             env["platform"], env["target"], env["platform"], env["target"]
         ),
         source=sources,
@@ -26,17 +26,17 @@ if env["platform"] == "macos":
 elif env["platform"] == "ios":
     if env["ios_simulator"]:
         library = env.StaticLibrary(
-            "bin/libgdfiber.{}.{}.simulator.a".format(env["platform"], env["target"]),
+            "demo/bin/libgdfiber.{}.{}.simulator.a".format(env["platform"], env["target"]),
             source=sources,
         )
     else:
         library = env.StaticLibrary(
-            "bin/libgdfiber.{}.{}.a".format(env["platform"], env["target"]),
+            "demo/bin/libgdfiber.{}.{}.a".format(env["platform"], env["target"]),
             source=sources,
         )
 else:
     library = env.SharedLibrary(
-        "bin/libgdfiber{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        "demo/bin/libgdfiber{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,
     )
 
