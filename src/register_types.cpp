@@ -5,8 +5,8 @@
 #include <godot_cpp/godot.hpp>
 #include <godot_cpp/classes/project_settings.hpp>
 
-#include "future.hpp"
-#include "promise.hpp"
+#include "objects/future.hpp"
+#include "objects/promise.hpp"
 
 void initialize_gdthread_module(godot::ModuleInitializationLevel p_level) {
     if (p_level != godot::MODULE_INITIALIZATION_LEVEL_SCENE) {
