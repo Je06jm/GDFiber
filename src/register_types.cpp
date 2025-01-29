@@ -15,16 +15,6 @@ void initialize_gdthread_module(godot::ModuleInitializationLevel p_level) {
 
     GDREGISTER_CLASS(godot::Future);
     GDREGISTER_CLASS(godot::Promise);
-
-    godot::ProjectSettings *project_settings = godot::ProjectSettings::get_singleton();
-
-    if (!project_settings->has_setting("gdfiber/enable")) {
-        project_settings->set_setting("gdfiber/enable", false);
-    }
-
-    if (!project_settings->has_setting("gdfiber/threads")) {
-        project_settings->set_setting("gdfiber/threads", -1);
-    }
 }
 
 void uninitialize_gdthread_module(godot::ModuleInitializationLevel p_level) {
